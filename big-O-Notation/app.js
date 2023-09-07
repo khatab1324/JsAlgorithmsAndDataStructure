@@ -110,6 +110,71 @@ function double(arr) {
   }
   return newArr;
 } //we get biger array with biger n =becuase of that it will be => O(n)
+
+// Who Cares?
+// Certain searching algorithms have logarithmic time complexity.
+
+// Efficient sorting algorithms involve logarithms.
+
+// Recursion sometimes involves logarithmic space complexity.
+
+// Recap
+// -To analyze the performance of an algorithm, we use Big O Notation
+// -Big O Notation can give us a high level understanding of the time or space complexity of an algorithm
+// -Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?)
+// -The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm
+// -Big O Notation is everywhere, so get lots of practice!
+
+// ============================OBJECTIVES==========================
+// Understand how objects and arrays work, through the lens of Big O
+// Explain why adding elements to the beginning of an array is costly
+// Compare and contrast the runtime for arrays and objects, as well as built-in methods
+
+let instructor = {
+  firstName: "Kelly",
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+}; // Unordered, key value pairs!
+
+// When to use objects?
+// -When you don't need order
+// -When you need fast access / insertion and removal
+
+// Big O of Objects
+// Insertion -   O(1)
+// Removal -   O(1)
+// Searching -   O(N)
+// Access -   O(1)
+// When you don't need any ordering, objects are an excellent choice!
+
+// Big O of Object Methods
+// Object.keys -   O(N)
+
+// Object.values -   O(N)
+
+// Object.entries -   O(N)
+
+// hasOwnProperty -   O(1)
+
+console.log(Object.keys(instructor)); //output:[ 'firstName', 'isInstructor', 'favoriteNumbers' ]
+// Object.key is O(n) because it need n time to sort n element
+//
+console.log(instructor.hasOwnProperty("firstName")); //it just show the key exists
+
+//
+
+// ====================WHEN TO USE ARRAYS ===============================
+// When you need order
+// When you need fast access / insertion and removal (sort of....)
+//
+// Big O of Arrays
+// Insertion -   It depends....//like if you push element at the end that normal ,but if you want to push at beginning witch element need to move fowrod that cuased problem
+// Removal -   It depends....//same thing like incsertion
+// Searching -   O(N)
+// Access -   O(1)
+
+//
+
 port = 3000;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);
