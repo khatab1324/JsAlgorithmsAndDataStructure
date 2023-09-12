@@ -29,18 +29,19 @@ console.log(sumAllNumber2(1000000));
 
 // Another Example
 // what is the big O for this code
-function countUpAndDown(n) {
-  console.log("Going Up!!!");
-  for (let i = 0; i <= n; i++) {
-    console.log(i);
-  } //here O(n)
-  console.log("Going Down!!!");
-  for (let i = n; i >= 0; i--) {
-    console.log(i);
-  } //here O(n)
-  console.log("Back Down . Bay!!");
-}
-countUpAndDown(10);
+
+// function countUpAndDown(n) {
+//   console.log("Going Up!!!");
+//   for (let i = 0; i <= n; i++) {
+//     console.log(i);
+//   } //here O(n)
+//   console.log("Going Down!!!");
+//   for (let i = n; i >= 0; i--) {
+//     console.log(i);
+//   } //here O(n)
+//   console.log("Back Down . Bay!!");
+// }
+// countUpAndDown(10);
 
 // we will figure Big O for this function //it is two o(n)
 
