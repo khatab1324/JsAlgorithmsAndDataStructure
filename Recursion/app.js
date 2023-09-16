@@ -70,21 +70,52 @@ function power(num1, num2) {
 const recursiveRange = (num) => (num === 0 ? 0 : num + recursiveRange(num - 1));
 // console.log(recursiveRange(9));
 
-function fib(num) {
-  const arr = [0, 1];
-  let z = 2;
-  function helper(num) {
-    arr[z] = arr[z-2] + arr[z-1]
-    if (z === num) {
-      return arr[z];
-    }
-    z++;
-    return helper(num);
-  }
-  return helper(num);
+// my solve
+// function fib(num) {
+//   const arr = [0, 1];
+//   let z = 2;
+//   function helper(num) {
+//     arr[z] = arr[z-2] + arr[z-1]
+//     if (z === num) {
+//       return arr[z];
+//     }
+//     z++;
+//     return helper(num);
+//   }
+//   return helper(num);
+// }
+function fib(n) {
+  if (n <= 2) return 1;
+  return fib(n - 1) + fib(n - 2);
 }
-console.log(fib(9));
+// console.log(fib(10));
 
+// taskes
+function reverse(word) {
+  if (word.length <= 1) {
+    return word[0];
+  }
+  // console.log(word.slice(1));
+  // console.log(word[0]);
+  let reverseWord = reverse(word.slice(1)) + word[0]; // Fix here
+  //                   e                     +   m     from  me
+  //                   em                    +   o     from  ome
+  //                   emo                   +   s     from  some
+  //                   emos                  +   e     from  esome
+  //                   emose                 +   w     from  wesome
+  //                   emosew                +   a     from  awesome
+  console.log(reverseWord);
+  return reverseWord;
+}
+// console.log(reverse("awesome"));
+
+function isPalindrome(word) {
+  if (word.length <= 0) return true;
+  let sameletter = word[0] === word[word.length - 1];
+  if (sameletter) return isPalindrome(word.slice(1, word.length - 1));
+  return false;
+}
+console.log(isPalindrome("atacocata"));
 port = 3000;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);

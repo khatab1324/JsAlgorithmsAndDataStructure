@@ -157,7 +157,27 @@ function areThereDuplicates() {
   }
   return false;
 }
-console.log(areThereDuplicates(1, 2, 2, 3, 4, 5));
+// console.log(areThereDuplicates(1, 2, 2, 3, 4, 5));
+
+// 5)
+function averagePair(arr, num) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    console.log(right);
+    let average = (arr[left] + arr[right]) / 2;
+    if (average === num) {
+      return true;
+    }
+    if (average > num) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+  return false;
+}
+console.log(averagePair([1, 3, 3, 5, 7, 10, 12, 19], 1));
 port = 3000;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);
