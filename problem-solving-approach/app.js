@@ -109,7 +109,7 @@ function findMax(arr, num) {
   }
   return maxValue;
 }
-// console.log(findMax([1, 3, 4, 5, 4, 4, 3, 3, 5, 6, 3], 3));
+console.log(findMax([1, 3, 4, 5, 4, 4, 3, 3, 5, 6, 3], 3));
 
 //============================= Divide And Conquer Pattern=================
 
@@ -177,7 +177,29 @@ function averagePair(arr, num) {
   }
   return false;
 }
-console.log(averagePair([1, 3, 3, 5, 7, 10, 12, 19], 1));
+// console.log(averagePair([1, 3, 3, 5, 7, 10, 12, 19], 1));
+
+// 6
+
+function maxSubarraySum(arr, num) {
+  if (num > arr.length) {
+    return null;
+  }
+  let maxValue = 0;
+  let tempValue = 0;
+
+  for (let i = 0; i < num; i++) {
+    maxValue += arr[i];
+  }
+  tempValue = maxValue;
+  for (let i = num; i < arr.length; i++) {
+    tempValue = tempValue - arr[i - num] + arr[i];
+    maxValue = Math.max(maxValue, tempValue);
+  }
+  return maxValue;
+}
+console.log(maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4));
+
 port = 3000;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);

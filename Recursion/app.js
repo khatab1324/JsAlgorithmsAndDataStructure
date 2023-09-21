@@ -115,7 +115,33 @@ function isPalindrome(word) {
   if (sameletter) return isPalindrome(word.slice(1, word.length - 1));
   return false;
 }
-console.log(isPalindrome("atacocata"));
+// console.log(isPalindrome("atacocata"));
+
+// 3)
+const isOdd = (val) => val % 2 !== 0;
+function someRecursive(arr, callback) {
+  if (!arr[0]) return false;
+  if (callback(arr[0])) return true;
+  return someRecursive(arr.slice(1), callback);
+}
+
+// console.log(someRecursive([4, 6, 8, 11], (val) => val > 10));
+const newArray = [];
+function flatten(arr) {
+  console.log("new array is :", newArray);
+  if (arr.length === 0) {
+    return newArray;
+  }
+  if (typeof arr[0] === "number") {
+    newArray.push(arr[0]);
+  }
+  if (typeof arr[0] === "object") {
+    console.log(arr);
+    flatten(arr[0]);
+  }
+  return flatten(arr.slice(1));
+}
+console.log(flatten([5]));
 port = 3000;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);
