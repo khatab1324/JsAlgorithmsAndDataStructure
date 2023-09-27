@@ -109,7 +109,7 @@ function findMax(arr, num) {
   }
   return maxValue;
 }
-console.log(findMax([1, 3, 4, 5, 4, 4, 3, 3, 5, 6, 3], 3));
+// console.log(findMax([1, 3, 4, 5, 4, 4, 3, 3, 5, 6, 3], 3));
 
 //============================= Divide And Conquer Pattern=================
 
@@ -198,7 +198,32 @@ function maxSubarraySum(arr, num) {
   }
   return maxValue;
 }
-console.log(maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4));
+// console.log(maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4));
+
+//7
+function minSubArrayLen(arr, num) {
+  let curretenElement = 1;
+  let tempValue = 0;
+  let count = 0;
+  let left = arr.length - 1;
+  while (curretenElement < arr.length) {
+    tempValue += arr[count];
+    console.log("tempValue " + tempValue);
+    if (tempValue === num) {
+      return curretenElement;
+    } else {
+      count++;
+    }
+    console.log(count);
+    if (arr[count] === arr[left]) {
+      count = 0;
+      curretenElement++;
+      // return tempValue;
+    }
+  }
+  return count;
+}
+console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
 
 port = 3000;
 app.listen(port, () => {
