@@ -223,7 +223,20 @@ function minSubArrayLen(arr, num) {
   }
   return count;
 }
-console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
+// console.log(minSubArrayLen([2, 3, 1, 2, 4, 3], 7));
+
+function findLongestSubstring(word) {
+  if (word.length === 0) return 0;
+  const newArray = [];
+  let count = 0;
+  newArray.push(word[count]);
+  for (let i = 0; i < word.length; i++) {
+  
+  }
+
+  return count;
+}
+console.log(findLongestSubstring("thisisawesome"));
 
 port = 3000;
 app.listen(port, () => {
