@@ -155,6 +155,7 @@ class DoublyLinkedLists {
     return removedNode;
   }
 }
+//  
 const list = new DoublyLinkedLists();
 list.push(1);
 list.push(2);
