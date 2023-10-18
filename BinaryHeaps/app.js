@@ -124,12 +124,12 @@ class MaxBinaryHeaps {
   // }
 }
 const heap = new MaxBinaryHeaps();
-heap.insert(41);
-heap.insert(39);
-heap.insert(33);
-heap.insert(18);
-heap.insert(27);
-heap.insert(12);
+heap.insert(3);
+heap.insert(1);
+heap.insert(2);
+heap.insert(4);
+heap.insert(5);
+heap.insert(6);
 heap.insert(55);
 heap.extractMax();
 console.log(heap);
