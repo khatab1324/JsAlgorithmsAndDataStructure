@@ -77,6 +77,35 @@ class HashTable {
     // also maby you will have deffernt key in same index you need to loop throw them and check of the key and return it if you find it
     return keyValue;
   }
+  values() {
+    let valueArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (!valueArr.includes(this.keyMap[i][j][0])) {//if the value not include
+            valueArr.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    console.log(valueArr);
+    return valueArr;
+  }
+  keys() {
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          // here to check is this key exist in our array
+          if (!keysArr.includes(this.keyMap[i][j][0])) {//if the value not include
+            keysArr.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    console.log(keysArr);
+    return keysArr;
+  }
 }
 let hashTable = new HashTable();
 hashTable.set("aatrox", "i am not god");
@@ -86,7 +115,9 @@ hashTable.set("khattab", "i need understand this");
 hashTable.set("khattab", "i need understand this");
 hashTable.set("khattab", "i need understand this");
 
-hashTable.get("aatrox");
+// hashTable.get("aatrox");
+hashTable.values();
+hashTable.keys();
 console.log(hashTable);
 const port = 3500;
 app.listen(port, () => {
