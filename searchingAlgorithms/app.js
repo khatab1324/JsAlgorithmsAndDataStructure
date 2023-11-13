@@ -66,19 +66,19 @@ function binarySearch(arr, num) {
     else if (arr[middle] < num) left = middle + 1;
     else right = middle - 1;
   }
-  return -1;
+  return -1; 
 }
 console.log(
   binarySearch(
     [
-      5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 40, 44, 64, 79, 84, 86, 95, 96, 98,
-      99,
+      -4, -2, 0, 3, 4, 6, 10, 14, 15, 18, 20, 24, 26, 27, 29, 30, 31, 44, 47,
+      49,
     ],
-    30
+    -5
   )
 );
 
-port = 3000;
+port = 3005;
 app.listen(port, () => {
   console.log(`open in port : ${port} ^__-`);
 });

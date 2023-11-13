@@ -7,11 +7,15 @@ const app = express();
 
 // ====================================== time complexity ====================================
 function sumAllNumber(n) {
-  return (n * (n + 1)) / 2;
+  return (n * (n + 1)) / 2; //1+2+3+4+5+6
 }
-console.log(sumAllNumber(10000000000000000));
+console.log("O(1)");
+console.log(
+  sumAllNumber(
+    100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  )
+);
 //here just 3 operations and we call it O(1) that mean it doesn't change
-
 function sumAllNumber2(n) {
   let total = 0;
   for (let i = 0; i <= n; i++) {
@@ -25,7 +29,8 @@ function sumAllNumber2(n) {
 // that get us to big O
 // big o =>It's a way of describing the relationship between the input to a function or as it grows
 // when we talk about big o we talk about the wors case we talk about upper bound for runtime
-console.log(sumAllNumber2(1000000));
+console.log("o(n)");
+console.log(sumAllNumber2(100000000000));
 
 // Another Example
 // what is the big O for this code
@@ -109,9 +114,10 @@ function double(arr) {
   for (let i = 0; i < arr.length; i++) {
     newArr.push(2 * arr[i]); //new array get longer and longer and longer
   }
+  console.log(newArr);
   return newArr;
 } //we get biger array with biger n =becuase of that it will be => O(n)
-
+// double(Array(100000).fill(0));
 // Who Cares?
 // Certain searching algorithms have logarithmic time complexity.
 
@@ -157,10 +163,10 @@ let instructor = {
 
 // hasOwnProperty -   O(1)
 
-console.log(Object.keys(instructor)); //output:[ 'firstName', 'isInstructor', 'favoriteNumbers' ]
+// console.log(Object.keys(instructor)); //output:[ 'firstName', 'isInstructor', 'favoriteNumbers' ]
 // Object.key is O(n) because it need n time to sort n element
 //
-console.log(instructor.hasOwnProperty("firstName")); //it just show the key exists
+// console.log(instructor.hasOwnProperty("firstName")); //it just show the key exists
 
 //
 
