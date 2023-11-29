@@ -74,12 +74,7 @@ class SinglyLinkedLists {
     return curreten;
   }
   getByValue(val) {
-    let curreten = this.head;
-    while (curreten) {
-      if (curreten.val === val) return curreten;
-
-      curreten = curreten.next;
-    }
+     
   }
   getByIndex(index) {
     if (index < 0 || index >= this.length) return undefined;
